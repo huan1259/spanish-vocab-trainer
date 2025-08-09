@@ -122,6 +122,11 @@ export default function SpanishVocabTrainer() {
   const [index, setIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
 
+  const prevWord = () => {
+    setIndex((prev) => (prev - 1 + vocabulary.length) % vocabulary.length);
+    setShowTranslation(false);
+  };
+
   const nextWord = () => {
     setIndex((prev) => (prev + 1) % vocabulary.length);
     setShowTranslation(false);
@@ -140,6 +145,7 @@ export default function SpanishVocabTrainer() {
       </Card>
       <div className="flex gap-4">
         <Button onClick={() => setShowTranslation(true)}>Show Translation</Button>
+        <Button onClick={prevWord}>Previous</Button>
         <Button onClick={nextWord}>Next</Button>
       </div>
     </div>
