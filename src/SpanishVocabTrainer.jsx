@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-Import vocabulary from "./vocabulary.json"
+import vocabulary from "./vocabulary.json"
 
 
 export default function SpanishVocabTrainer() {
